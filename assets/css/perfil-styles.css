@@ -1,0 +1,326 @@
+/* ==================================== */
+/* ESTILOS ESPECÍFICOS PARA LA PÁGINA DE PERFIL */
+/* ==================================== */
+
+/* Asegura que el contenido principal no se pegue al encabezado */
+body.profile-page-v2 main {
+    padding-top: 3rem;
+}
+
+.profile-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.profile-sidebar {
+    width: 300px;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar-box {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile-username {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.btn-profile-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-profile-action:hover {
+    color: var(--secondary-color);
+}
+
+.profile-menu {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+}
+
+.profile-menu li {
+    margin-bottom: 1rem;
+}
+
+.profile-menu a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    color: #666;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-menu a:hover,
+.profile-menu a.active {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.profile-menu a.active i {
+    color: var(--light-text-color);
+}
+
+.profile-content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.profile-section-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.profile-section-content.active {
+    display: block;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 50px;
+    background-color: #dc3545;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-logout i {
+    font-size: 1.2rem;
+}
+
+.profile-menu a i {
+    font-size: 1rem;
+    color: #008080;
+    width: 20px;
+    text-align: center;
+}
+
+.dashboard-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background-color: var(--light-text-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+}
+
+.info-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Reglas corregidas y más específicas para los formularios */
+.edit-form-container {
+    padding: 2rem;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.edit-form-container .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Cambiamos el color de las etiquetas a gris oscuro */
+.edit-form-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333; /* Color de las etiquetas */
+}
+
+/* Ajustes para los campos de entrada de texto y contraseña */
+.edit-form-container input[type="text"],
+.edit-form-container input[type="email"],
+.edit-form-container input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333 !important; /* Forzamos el color del texto a negro */
+    background-color: #fff;
+}
+
+.form-help-text {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.form-actions .btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s 2.5s ease-in forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* MEDIA QUERIES ESPECÍFICAS DEL PERFIL */
+@media (max-width: 992px) {
+    .profile-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 1rem;
+    }
+
+    .profile-menu {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .profile-menu li {
+        margin: 0 0.25rem 0.5rem;
+    }
+
+    .profile-menu a {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .profile-content {
+        padding: 1.5rem;
+    }
+}
